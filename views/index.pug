@@ -1,0 +1,79 @@
+extends layout
+
+block content
+    header
+        nav
+            div.logo
+                p LOGO
+            ul.menu
+                li
+                    a(href='#') Inicio
+                li
+                    a(href='#contenido') Contenido
+                li
+                    a(href='#services') Servicios
+                li
+                    a(href='#contacto') Contacto
+        div#principal
+            h1 Bienvenido a esta landing general
+    main
+        div#contenido
+            div#contenidoPrincipal
+                h2 Contenido principal de la página
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in orci eget erat molestie tempor. Suspendisse sit amet risus ac massa vulputate commodo id volutpat odio. Curabitur a arcu ornare, consequat arcu ut, mattis nisi. Morbi aliquet libero in mauris finibus interdum. Praesent pretium et nisi maximus luctus. Morbi mi eros, scelerisque ac ligula id, scelerisque imperdiet elit. Sed at dolor ac neque egestas eleifend. Nunc ullamcorper imperdiet nunc, vitae cursus augue mollis fermentum. Duis sagittis, enim in hendrerit commodo, sem nunc dictum augue, nec molestie mauris est nec ipsum. Aliquam at tortor et massa consectetur fringilla. Integer elementum lectus nibh, a tincidunt nulla rhoncus in. Donec varius molestie scelerisque. Aliquam nec quam varius, laoreet quam id, dignissim magna.
+            div#contenidoSecundario
+                p Aquí podría ir una imagen o cualquier otra cosa
+
+        div#call1.call
+            h3 Llamada a la acción 1!!!
+            button Click!!!
+
+        div#services
+            div.title
+                h2 Servicios
+            div.service
+                img(src='/images/unicorn.png')
+                h3 Diseño
+            div.service
+                img(src='/images/unicorn.png')
+                h3 Diseño
+            div.service
+                img(src='/images/unicorn.png')
+                h3 Diseño
+        div.gallery
+            div
+                img(src='/images/unicorn.png')
+            div
+                img(src='/images/unicorn.png')
+            div
+                img(src='/images/unicorn.png')
+            div
+                img(src='/images/unicorn.png')
+            div
+                img(src='/images/unicorn.png')
+            div
+                img(src='/images/unicorn.png')
+
+        div#call2.call
+            h3 Llamada a la acción 1!!!
+            button Click!!!
+
+        div#contacto
+            div.title
+                h2 Contacto
+            form
+                div
+                    label Asunto
+                    input
+                div
+                    label E-Mail
+                    input
+                div
+                    label Mensaje
+                    textarea
+                div
+                    button Enviar
+
+        footer
+            div
+                h3 Esto es el footer
