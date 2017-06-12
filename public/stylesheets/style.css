@@ -8,7 +8,7 @@ img {
 }
 
 h1{
-    font-size: 2em;
+    font-size: 3.5em;
     margin: .5em;
 }
 
@@ -60,19 +60,19 @@ nav {
     width: 40%;
 }
 
-nav ul {
+.menu {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     align-content: space-between;
 }
 
-nav ul li {
+.menu li {
     padding: 0 10%;
     font-size: 1em;
 }
 
-nav ul li a{
+.menu li a{
     color: #000;
     text-decoration: none;
 }
@@ -87,6 +87,14 @@ nav ul li a{
     align-content: center;
     align-items: center;
     margin:0;
+}
+
+#principal h1{
+    background-color: rgba(255, 255, 255, 0.31);
+    width: 100vw;
+    text-align: center;
+    margin: 0;
+    padding: 5vh 0;
 }
 
 #contenido{
@@ -173,10 +181,9 @@ footer{
     background-color: bisque;
     min-height: 20vh;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
