@@ -1,0 +1,197 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1{
+    font-size: 3.5em;
+    margin: .5em;
+}
+
+h2{
+    font-size: 1.8em;
+    margin: .3em;
+}
+
+h3{
+    font-size: 1.5em;
+    margin: .2em;
+}
+
+button{
+    width: 15vw;
+    height: 5vh;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
+p{
+    margin: .2em;
+}
+
+.menu li {
+    display: inline;
+}
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    background-color: grey;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo{
+    width: 10%;
+}
+
+.menu{
+    width: 40%;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.menu li {
+    padding: 0 10%;
+    font-size: 1em;
+}
+
+.menu li a{
+    color: #000;
+    text-decoration: none;
+}
+
+#principal{
+    height: 100vh;
+    background-image: url("../images/fondo.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin:0;
+}
+
+#principal h1{
+    background-color: rgba(255, 255, 255, 0.31);
+    width: 100vw;
+    text-align: center;
+    margin: 0;
+    padding: 5vh 0;
+}
+
+#contenido{
+    min-height: 80vh;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin:0;
+}
+
+#contenidoPrincipal, #contenidoSecudario{
+    width: 50vw;
+}
+
+.call{
+    background-color: antiquewhite;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#services{
+    background-color: beige;
+    min-height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.service{
+    text-align: center;
+}
+
+.gallery{
+    background-color: cornsilk;
+    min-height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery div{
+    border: solid 1px black;
+    margin: 1vw;
+    padding: 1vw;
+    width: 25vw;
+}
+
+#contacto{
+    background-color: floralwhite;
+    min-height: 60vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#contacto form{
+    width: 50vw;
+    height: 60vh;
+}
+
+textarea{
+    resize: none;
+    height: 10vh;
+}
+
+form div{
+    margin: 3vw;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+footer{
+    background-color: bisque;
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.title{
+    width: 100vw;
+    text-align: center;
+}
+
+#contenido, #services, #contacto{
+    padding-top: 10vh;
+}

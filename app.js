@@ -1,29 +1,42 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+'use strict';
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const path = require('path');
 
-var app = express();
+// Express
+const express = require('express');
+const app = express();
+
+// Locals
+const environment = require('./config/environment');
+const config = environment(process.env.NODE_ENV);
+
+// Body Parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Logger
+const logger = require('morgan');
+app.use(logger('dev'));
+
+// Cookie
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+// Favicon
+const favicon = require('serve-favicon');
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
+const index = require('./routes/index');
 app.use('/', index);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,14 +46,37 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// development error handler
+if ( config.environment === 'development' ) {
+    app.use(function(err, req, res, next) {
+        if ( err.status === 404 ) {
+            res.render('404');
+        } else {
+            res.status(err.status || 500);
+            res.render('error', {
+                message: err.message,
+                error: err,
+                errors: []
+            });
+        }
+    });
+}
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// production error handler
+app.use(function(err, req, res, next) {
+    if ( err.status === 404 ) {
+        res.render('404');
+    } else {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err,
+            errors: []
+        });
+    }
 });
 
-module.exports = app;
+// LISTEN
+app.listen( config.port, config.ip, function() {
+  console.log( 'Express server listening config as '+ config.environment + ' on: ' + config.ip + ':' +config.port );
+});
